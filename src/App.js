@@ -7,6 +7,9 @@ import {v4} from 'uuid';
 import ColorList from './ColorList';
 import AddColorForm from './AddColorForm';
 
+import { createStore, combineReducers } from 'redux' 
+import { colors , sort } from './reducers';
+
 class App extends Component {
 
   constructor(props){
@@ -30,13 +33,16 @@ class App extends Component {
           "color": "#ff0000",
           "rating": 0
         }
-      ]
+      ],
+      sort: 'SORTED_BY_DATE'
     }
 
     this.addColor = this.addColor.bind(this)
     this.rateColor = this.rateColor.bind(this)
     this.removeColor = this.removeColor.bind(this)
 
+    const store = createStore(  combineReducers( { colors , sort }) )
+    console.log( 'store.getState : ' , store.getState() )
     
   }
 

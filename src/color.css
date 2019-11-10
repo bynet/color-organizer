@@ -18,3 +18,13 @@ section.color div.color{
 section.color h4,h6 {
     margin:0.5em;
 }
+
+section.color div.row{
+    display:flex;
+}
+
+section.color button.close{
+    margin-left: auto;
+    background-color: white;
+    border-color: white;
+}
