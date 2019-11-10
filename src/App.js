@@ -7,14 +7,11 @@ import {v4} from 'uuid';
 import ColorList from './ColorList';
 import AddColorForm from './AddColorForm';
 
-import { createStore, combineReducers } from 'redux' 
-import { colors , sort } from './reducers';
-
 class App extends Component {
 
   constructor(props){
     super(props)
-    this.state = {
+    const initialState = {
       colors : [
         {
           "id": "0175d1f0-a8c6-41bf-8d02-df5734d829a4",
@@ -41,9 +38,21 @@ class App extends Component {
     this.rateColor = this.rateColor.bind(this)
     this.removeColor = this.removeColor.bind(this)
 
-    const store = createStore(  combineReducers( { colors , sort }) )
-    console.log( 'store.getState : ' , store.getState() )
+    const store = createStore(  combineReducers( { colors , sort }) , 
+                              ( localStorage['redux-store'] ) ? 
+                                JSON.parse(localStorage['redux-store']) : initialState ) 
+
+    console.log('1.store.getState : ' , store.getState() )
+
+    store.dispatch({ 
+      type: "ADD_COLOR",    
+      id: v4(),    
+      title: "Party Pink",    
+      color: "#F142FF",    
+      timestamp: new Date().toString()})
     
+    console.log('2.store.getState : ' , store.getState() )
+
   }
 
   addColor(title , color ){
