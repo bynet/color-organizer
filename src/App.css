@@ -10,3 +10,17 @@ section.main{
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+
+form.color {
+  display: flex;
+  margin:.5em 0;
+}
+
+form.color input[type=text] {
+  flex-grow: 1;
+}
+
+form.color > * + * {
+  margin-left:1em;
+}

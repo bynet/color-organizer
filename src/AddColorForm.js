@@ -12,7 +12,7 @@ const AddColorForm = ({ onNewColor = f => f }) => {
     }
 
     return (
-        <form onSubmit={ submit }>
+        <form className="color" onSubmit={ submit }>
             <input 
                 ref = { input => _title = input }
                 type="text"
