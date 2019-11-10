@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![color-organizer](https://github.com/bynet/color-organizer/edit/master/color-organizer.png)
+![color-organizer](https://github.com/bynet/color-organizer/blob/master/color-organizer.png)
 
 ## Available Scripts
 
