@@ -1,5 +1,5 @@
 
-export const stateData = {
+const initialStateData = {
     colors: [
         {
             "id": "0175d1f0-a8c6-41bf-8d02-df5734d829a4",
@@ -22,3 +22,4 @@ export const stateData = {
     sort: 'SORTED_BY_DATE'
 }
 
+export default initialStateData;

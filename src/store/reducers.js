@@ -1,4 +1,4 @@
-import C from './constants';
+import C from '../constants';
 
 /* const action = { 
     type: "ADD_COLOR", 
@@ -15,7 +15,7 @@ The  names  of  the  fieldsmatch the names of the reducers that are passed in.
 
 */
 
-export const color = ( state = {} , action ) => { 
+export const color = ( state = {} , action = { type : null } ) => { 
     switch( action.type ){
         case C.ADD_COLOR:
             return {
@@ -39,7 +39,7 @@ export const color = ( state = {} , action ) => {
 
 }
 
-export const colors = ( state = [] , action ) => {
+export const colors = ( state = [] , action = { type : null } ) => {
     switch( action.type ){
         case C.ADD_COLOR:
             return [ ...state , color( {} , action ) ]
@@ -54,7 +54,7 @@ export const colors = ( state = [] , action ) => {
 
 
 
-export const sort = ( state = 'SORTED_BY_DATE' ,  action ) => {
+export const sort = ( state = 'SORTED_BY_DATE' ,  action = { type : null } ) => {
     switch( action.type ){
         case C.SORT_COLORS:
             return action.sortBy;
